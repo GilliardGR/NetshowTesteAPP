@@ -5,8 +5,8 @@ Este projeto consome uma API local rodando com JSON Server, exibe vídeos em for
 ## Índice
 
 - [Sobre](#sobre)
-- [Instalação](#instalação)
 - [Tecnologias](#tecnologias)
+- [Instalação](#instalação)
 - [Observações](#observações)
 
 ## Sobre
