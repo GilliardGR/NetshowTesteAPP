@@ -20,7 +20,7 @@ export const ContentView = styled.View`
 
 export const ContentImageWrapper = styled.ScrollView`
   flex-direction: row;
-  height: 200px;
+  height: 240px;
 `;
 
 export const ImageContainer = styled.TouchableOpacity`

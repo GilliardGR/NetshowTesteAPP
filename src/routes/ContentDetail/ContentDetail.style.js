@@ -25,24 +25,25 @@ export const CloseButtonContainer = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   border-radius: 30px;
   background-color: ${GlobalStyles.greyMain};
   margin-top: 8px;
-  margin-right: 8px;
+  margin-right: 5px;
 `;
 
 export const Content = styled.View`
   width: 100%;
-  height: 40%;
+  height: 560px;
   /* background-color: red; */
   margin-top: 20px;
 `;
 export const ContentName = styled.Text`
-  font-weight: 600;
+  font-weight: 500;
   font-size: 25px;
   color: ${GlobalStyles.horizontalList.titleColor};
+  width: 90%;
   /* background-color: red; */
 `;
 
@@ -62,17 +63,20 @@ export const Description = styled.Text`
 
 export const Row = styled.View`
   width: 100%;
-  height: 50px;
+  height: 95px;
   flex-direction: row;
+  /* position: relative; */
   /* align-items: flex-start; */
   justify-content: space-between;
   /* background-color: red; */
   align-items: center;
-  padding-right: 8px;
+  /* margin-right: -8px; */
+  /* padding-right: 10px; */
 `;
 export const ButtonLike = styled.Image`
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
+  /* margin-left: 30px; */
 `;
 export const TextLikesAndViews = styled.Text`
   font-size: 20px;
