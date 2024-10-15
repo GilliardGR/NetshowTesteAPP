@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import SkeletonLoading from "../../components/SkeletonLoading/SkeletonLoading";
 import TransitionLoading from "../../components/TransitionLoading/TransitionLoading";
 import API from "../../services/API";
+import { getVideoByCategory, getVideo } from "../../services/API";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -17,9 +18,8 @@ const Home = () => {
 
   const fetchCategories = async () => {
     try {
-      const url = "http://10.0.2.2:3000/categories";
-      const categoriesData = await API.get(url);
-      setCategoryList(categoriesData.data);
+      const categoriesData = await getVideoByCategory();
+      setCategoryList(categoriesData);
     } catch (error) {
       console.error("Erro ao buscar categorias:", error);
     }
@@ -27,9 +27,8 @@ const Home = () => {
 
   const fetchVideos = async () => {
     try {
-      const url = "http://10.0.2.2:3000/videos";
-      const videosData = await API.get(url);
-      setVideosList(videosData.data);
+      const videosData = await getVideo();
+      setVideosList(videosData);
     } catch (error) {
       console.error("Erro ao buscar vídeos:", error);
     }
@@ -89,8 +88,6 @@ const Home = () => {
                           source={{ uri: video.thumbnail }}
                           resizeMode="cover"
                         />
-                        {/* Se quiser exibir o título dos vídeos, remova o comentário da linha abaixo */}
-                        {/* <S.ImageText>{video.title}</S.ImageText> */}
                       </S.ImageContainer>
                     ))}
                 </S.ContentImageWrapper>

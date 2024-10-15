@@ -5,24 +5,24 @@ const API = axios.create({
   timeout: 10000,
 });
 
-//OBTER VIDEOS POR CATEGORIA
-export const getVideoByCategory = async (categoryId) => {
+export const getVideoByCategory = async () => {
   try {
-    const { data } = await API.get(`/videos/category/${categoryId}`);
+    const { data } = await API.get("/categories");
     return data;
   } catch (e) {
-    console.warn("Erro ao obter dados por category", e);
+    console.warn("Erro ao obter categorias:", e);
     return null;
   }
 };
 
-// OBTER VIDEO POR ID
-export const getVideoById = async (id) => {
+// OBTER VIDEO
+export const getVideo = async () => {
   try {
-    const { data } = await API.get(`/videos/${id}`);
+    const { data } = await API.get("/videos");
     return data;
   } catch (e) {
-    return console.warn("Erro ao obter dados por id", e);
+    console.warn("Erro ao obter vídeos:", e);
+    return null;
   }
 };
 
