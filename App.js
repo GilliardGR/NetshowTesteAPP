@@ -1,13 +1,18 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { ScrollView } from "react-native";
 import RouteManager from "./src/routes/RouteManager";
+import { VideoLikesProvider } from "./src/context/VideoLikesContext";
+import { VideoViewsProvider } from "./src/context/VideoViewsContext";
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <RouteManager />
-    </NavigationContainer>
+    <VideoViewsProvider>
+      <VideoLikesProvider>
+        <NavigationContainer>
+          <RouteManager />
+        </NavigationContainer>
+      </VideoLikesProvider>
+    </VideoViewsProvider>
   );
 };
 

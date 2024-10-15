@@ -10,7 +10,7 @@ import API from "../../services/API";
 
 const Home = () => {
   const navigation = useNavigation();
-  const [isLoading, setIsLoading] = useState(true); // Loading enquanto carrega os dados
+  const [isLoading, setIsLoading] = useState(true);
   const [categoryList, setCategoryList] = useState([]);
   const [videosList, setVideosList] = useState([]);
   const [showTransitionLoading, setShowTransitionLoading] = useState(false);
@@ -57,6 +57,7 @@ const Home = () => {
         views: video.views,
         thumbnail: video.thumbnail,
         hlsPath: video.hls_path,
+        videoId: video.id,
       });
     }, 1000);
   };
@@ -88,7 +89,7 @@ const Home = () => {
                           source={{ uri: video.thumbnail }}
                           resizeMode="cover"
                         />
-                        {/* Se quiser exibir o título dos vídeos, descomente a linha abaixo */}
+                        {/* Se quiser exibir o título dos vídeos, remova o comentário da linha abaixo */}
                         {/* <S.ImageText>{video.title}</S.ImageText> */}
                       </S.ImageContainer>
                     ))}

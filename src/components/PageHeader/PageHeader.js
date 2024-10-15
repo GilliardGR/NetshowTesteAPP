@@ -1,10 +1,10 @@
 import React from "react";
 import * as S from "./PageHeader.style";
-import { TouchableOpacity, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const PageHeader = () => {
   const navigation = useNavigation(); // Hook para navegar de volta
+  const goBackButton = require("../../../assets/icons/back.png");
 
   return (
     <S.Container>
@@ -13,7 +13,7 @@ const PageHeader = () => {
           navigation?.goBack();
         }}
       >
-        <S.ButtonIcon source={require("../../../assets/icons/back.png")} />
+        <S.ButtonIcon source={goBackButton} />
         <S.BackTitle>Voltar</S.BackTitle>
       </S.BackButton>
     </S.Container>
